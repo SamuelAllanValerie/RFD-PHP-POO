@@ -1,9 +1,13 @@
 <?php
 
- abstract class Vehicule
+abstract class Vehicule //implements Velocite
 {
     public $masse;
     public $vitesse;
+
+   /* public function Velocite($a, $b) {
+        return void;
+    }*/
 
     public function calculerEnergieCinetique()
     {

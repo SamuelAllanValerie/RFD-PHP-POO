@@ -22,4 +22,6 @@ $gerard->masse = 1075;
 
 $caisse = new SUV(  "Rouge",  50);
 $caisse->setMessage(  "Forever forever");
-echo $caisse->getMessage();
+//echo $caisse->getMessage();
+
+Bidon::coucou();
