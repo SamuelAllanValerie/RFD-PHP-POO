@@ -1,13 +1,16 @@
 <?php
 
-class Voiture
+class Voiture extends Vehicule
 {
     public $couleur;
     public $marque;
+    public $capaciteReservoir;
+    //public $qteCarburantReservoir
 
-    public function __construct($color)
+    public function __construct($color, $reservoir)
     {
         $this->couleur = $color;
+        $this->capaciteReservoir = $reservoir;
     }
 
     public function afficherMessageALaCon() {
@@ -15,7 +18,13 @@ class Voiture
     }
 
     public function peindreVoiture($couleur) {
-       $this->couleur = $couleur;
+        $this->couleur = $couleur;
+    }
+
+    public function calculerKmRestant($qteRestante, $consommation)
+    {
+        $reserve = $this->capaciteReservoir * 5 / 100;
+        return ($qteRestante - $reserve) / $consommation * 100;
     }
 
     public function __destruct()

@@ -1,16 +1,25 @@
 <?php
-include "./classes/Voiture.php";
+require_once "./functions/classautoloader.php";
 
-$gerard = new Voiture( "Jaune");
+spl_autoload_register('classAutoLoader');
 
-var_dump($gerard);
+$gerard = new Voiture( "Jaune",50 );
 
-$gerard->couleur = "Bleu";
+
 $gerard->marque = "Renault Fuego";
 $gerard->afficherMessageALaCon();
 
-var_dump($gerard);
 
 $gerard->peindreVoiture("Vert pomme");
 
-var_dump($gerard);
+
+$gerard->vitesse = 30;
+$gerard->masse = 1075;
+
+//echo $gerard->calculerEnergieCinetique() . "Joules<br />";
+
+//echo $gerard->calculerKmrestant(   30, 6);
+
+$caisse = new SUV(  "Rouge",  50);
+$caisse->setMessage(  "Forever forever");
+echo $caisse->getMessage();
